@@ -5,8 +5,11 @@ A simple git hook to provide strong guidelines for commit message with emojis.
 The commit message rules are the ones from Angular. I just augmented them by substituting their textual types with emojis. So it should look like this:
 
 ```
-🚑(authentication): remove buggy function that allowed to login w/o passwd
+🚑 (authentication): remove buggy function that allowed to login w/o passwd
 ```
+
+You'll notice another slight change from Angular's rules: I added a space between type and (scope). It is indeed visually more pleasant after the emojis.
+
 __Emojis are actual unicode emojis and not markdown emojis like `:fire:`. So it will work virtually everywhere as long as unicode is supported.__
 
 There are two hooks, one that makes the actual substitution and another one that prints the git commit message helper in the editor.
