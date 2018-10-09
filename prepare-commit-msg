@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ -z $2 ]
+then
+    echo > $1
+    echo "# Each commit message consists of a header, a body and a footer." >> $1
+    echo "# Header format is of the following “<type>(<scope>): <subject>” (scope is optional)" >> $1
+    echo "# exemple -> :build:(npm) update linter version"
+    echo >> $1
+    echo "# Available types" >> $1
+    echo "# :revert: -> Reverts a previous commit (same header as prev commit & SHA in body)" >> $1
+    echo "# :build: -> Changes that affect the build system or external dependencies" >> $1
+    echo "# :ci: -> Changes to our CI configuration files and scripts" >> $1
+    echo "# :docs: -> Documentation only changes" >> $1
+    echo "# :feat: -> A new feature" >> $1
+    echo "# :fix: -> A bug fix" >> $1
+    echo "# :perf: -> A code change that improves performance" >> $1
+    echo "# :refactor: -> A code change that neither fixes a bug nor adds a feature" >> $1
+    echo "# :style: -> Changes that do not affect the meaning of the code" >> $1
+    echo "# :test: -> Adding missing tests or correcting existing tests" >> $1
+fi
