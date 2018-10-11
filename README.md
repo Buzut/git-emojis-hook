@@ -55,6 +55,24 @@ alias ginit='git init && cp ~/.gitemojis/* .git/hooks/'
 
 Now, when in a new project directory, `ginit` will both initialize the project and add the git-emojis' hooks.
 
+### Integrate to your projects
+Unfortunately, hooks aren't part of a project and therefore, they cannot be commited with the project's files. Nevertheless, you can include the one-liner introduced above into your project's init script. For instance, with JavaScript's npm package manager you could do it like so:
+
+```
+{
+  "name": "project-name",
+  "version": "1.0.0",
+  "description": "The next big thing",
+  "scripts": {
+    "prepare": "cd .git/hooks/ && curl -O https://raw.githubusercontent.com/Buzut/git-emojis-hook/master/commit-msg && curl -O https://raw.githubusercontent.com/Buzut/git-emojis-hook/master/prepare-commit-msg && chmod +x *"
+  },
+  "dependencies": {…},
+  "devDependencies": {…}
+}
+```
+
+`prepare` will then trigger on `npm install` and the hooks will be installed automatically.
+
 ## Based on Angular's commit message guidelines
 Angular enforces succint and yet very clear guidelines for their commit messages. Let's have a look at the rules. The following is directly copied from [their repo](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines).
 
