@@ -16,7 +16,7 @@ There are two hooks, one that makes the actual substitution and another one that
 
 ## Syntax
 Here are the types, their respective codes and the corresponding emojis:
-* __revert__: `:revert:` • 🔨
+* __revert__: `:revert:` • ⏳
 * __build__: `:build:` • 📦
 * __ci__: `:ci:` • 🤖
 * __docs__: `:docs:` • 📖

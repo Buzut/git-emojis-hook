@@ -3,7 +3,7 @@
 msg=`cat $1`
 
 msg=`echo "$msg" | sed 's/:tada:/🎉/'`
-msg=`echo "$msg" | sed 's/:revert:/🔨/'`
+msg=`echo "$msg" | sed 's/:revert:/⏳/'`
 msg=`echo "$msg" | sed 's/:build:/📦/'`
 msg=`echo "$msg" | sed 's/:ci:/🤖/'`
 msg=`echo "$msg" | sed 's/:docs:/📖/'`
