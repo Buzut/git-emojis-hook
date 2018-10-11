@@ -33,7 +33,13 @@ In addition to these, I added `:tada:` 🎉 that's often used for the first comm
 ## How to use
 For each project, add the two files in in the `.git/hooks` directory.
 
-It might be handy to place the two files in a directory withing your directory and add a bash alias to automate the deploy.
+At the root of your git project, this one-liner can set up it all:
+
+```
+cd .git/hooks/ && curl -O https://raw.githubusercontent.com/Buzut/git-emojis-hook/master/commit-msg && curl -O https://raw.githubusercontent.com/Buzut/git-emojis-hook/master/prepare-commit-msg && chmod +x *
+```
+
+Also, it might be handy to place the two files in a directory within your directory and add a bash alias to automate the deploy.
 
 For exemple, in your home diretory, you could organize things like this:
 ```
