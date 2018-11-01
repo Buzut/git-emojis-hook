@@ -1,4 +1,4 @@
-# Git emoji hook
+# Git emojis hook
 
 A simple git hook to provide strong guidelines for commit message with emojis.
 
@@ -50,10 +50,10 @@ For exemple, in your home diretory, you could organize things like this:
 
 And in your `.bash_profile` or `.bashrc`
 ```
-alias ginit='git init && cp ~/.gitemojis/* .git/hooks/'
+alias emogitify='cp ~/.gitemojis/* .git/hooks/'
 ```
 
-Now, when in a new project directory, `ginit` will both initialize the project and add the git-emojis' hooks.
+Now, when in a project directory, `emogitify` will add the git-emojis' hooks.
 
 ### Integrate to your projects
 Unfortunately, hooks aren't part of a project and therefore, they cannot be commited with the project's files. Nevertheless, you can include the one-liner introduced above into your project's init script. For instance, with JavaScript's npm package manager you could do it like so:
