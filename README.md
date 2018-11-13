@@ -25,7 +25,7 @@ Here are the types, their respective codes and the corresponding emojis:
 * __perf__: `:perf:` • ⚡
 * __refactor__: `:refactor:` • 🚧
 * __style__: `:style:` • 💄
-* __text__: `:test:` • ✅
+* __test__: `:test:` • ✅
 
 In addition to these, I added `:tada:` 🎉 that's often used for the first commit!
 
