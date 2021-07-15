@@ -2,16 +2,23 @@
 
 msg=`cat $1`
 
-msg=`echo "$msg" | sed 's/:tada:/🎉/'`
-msg=`echo "$msg" | sed 's/:revert:/⏳/'`
-msg=`echo "$msg" | sed 's/:build:/📦/'`
-msg=`echo "$msg" | sed 's/:ci:/🤖/'`
-msg=`echo "$msg" | sed 's/:docs:/📖/'`
-msg=`echo "$msg" | sed 's/:feat:/🌟/'`
-msg=`echo "$msg" | sed 's/:fix:/🚑/'`
-msg=`echo "$msg" | sed 's/:perf:/⚡/'`
-msg=`echo "$msg" | sed 's/:refactor:/🚧/'`
-msg=`echo "$msg" | sed 's/:style:/💄/'`
-msg=`echo "$msg" | sed 's/:test:/✅/'`
+if [[ $msg =~ ^(:.+: )?([a-z,-AZ])+(\(.+\)):.+$ ]]
+then
+    msg=`echo "$msg" | sed -E 's/(^tada\()/🎉 tada(/'`
+    msg=`echo "$msg" | sed -E 's/(^revert\()/⏳ revert(/'`
+    msg=`echo "$msg" | sed -E 's/(^build\()/📦 build(/'`
+    msg=`echo "$msg" | sed -E 's/(^ci\()/🤖 ci(/'`
+    msg=`echo "$msg" | sed -E 's/(^docs\()/📝 docs(/'`
+    msg=`echo "$msg" | sed -E 's/(^feat\()/✨ feat(/'`
+    msg=`echo "$msg" | sed -E 's/(^fix\()/🐛 fix(/'`
+    msg=`echo "$msg" | sed -E 's/(^perf\()/⚡ perf(/'`
+    msg=`echo "$msg" | sed -E 's/(^refactor\()/🚧 refactor(/'`
+    msg=`echo "$msg" | sed -E 's/(^style\()/🎨 style(/'`
+    msg=`echo "$msg" | sed -E 's/(^test\()/✅ test(/'`
+    msg=`echo "$msg" | sed -E 's/(^chore\()/🔧 chore(/'`
+else
+    printf '\n⚠️ The commit message should be structured as follows: <type>(<scope>): <subject>\n\n'
+    msg=`echo  🔥 "$msg"`
+fi
 
 echo "$msg" > $1
